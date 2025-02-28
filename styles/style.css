@@ -1,3 +1,5 @@
+/**/
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -10,6 +12,9 @@
 body {
     background-color: #081b29;
     color: #ededed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -63,6 +68,8 @@ body {
     display: flex;
     align-items: center;
     padding: 0 10%;
+    justify-content: space-between;
+    gap: 300px;
 }
 
 .home-content {
