@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <!-- add in nav, footer, article, aside and header -->
+    <header class="header">
+        <a href="#" class="logo">Hakim.</a>
+
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="templates/about.html">About</a>
+            <a href="templates/portfolio.html">Portfolio</a>
+            <a href="templates/education.html">Education</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <article>
+            <section>
+                <h2 class="text-style">Login</h2>
+                <form action="/login" method="post">
+                    <label for="username" class="text-style">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <br>
+                    <label for="password" class="text-style">Password:</label>
+                    <input type="password" id="password" name="password" class="text-style" required>
+                    <br>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+        </article>
+        <footer>
+            <p>&copy; 2025 Queen Mary University of London</p>
+        </footer>
+    </div>
+</body>
+</html>
