@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+        padding-bottom: 0;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+}

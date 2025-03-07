@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .home {
+        padding-top: 50px;
+    }
+
+    .main {
+        padding-top: 10px;
+    }
+}

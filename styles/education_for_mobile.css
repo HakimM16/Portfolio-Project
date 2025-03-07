@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+    .home {
+        padding-top: 0;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .education-item, .certification-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .education h2, .certification h2 {
+        font-size: 1.2rem;
+    }
+}
