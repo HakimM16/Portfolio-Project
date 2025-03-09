@@ -1,0 +1,57 @@
+.home {
+    min-height: 100vh;
+    padding: 50px 10% 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 0;
+    gap: 20px;
+}
+
+.main-content {
+    max-width: 600px;
+}
+
+.main-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.main-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+    margin: 20px 0;
+}
+
+.main-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+    line-height: 1.5;
+    font-family: Comfortaa, cursive;
+}
+
+.pic {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.pic img {
+    position: relative;
+    width: 275px;
+    height: 470px;
+    border-radius: 16px;
+}
