@@ -55,3 +55,45 @@
     height: 470px;
     border-radius: 16px;
 }
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #3498db;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #2980b9;
+}
+
+.resume-download {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download:hover {
+    background-color: #2980b9;
+}
+
+.resume-download i {
+    margin-right: 8px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
