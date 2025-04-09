@@ -64,7 +64,7 @@
         <div class="blog-container">
             <h1>Add Blog</h1>
             
-            <form action="viewblog.php" method="post">
+            <form action="addpost.php" method="post">
                 <div class="form-group">
                     <input type="text" name="title" placeholder="Title" required>
                 </div>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../styles/layout.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
+    <!-- styling for blog page -->
+    <link rel="stylesheet" href="../styles/viewblog.css">
     <!-- Ubuntu styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +58,18 @@
         ?>
     </header>
     <div class="container">
-
+        <div class="blog-container">
+            <!-- blog template -->
+            <!-- <div class="blog-post">
+                <h2>Blog Post Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <hr>
+            </div> -->
+            <?php
+                // get data from the 
+            ?>
+        </div>
     </div>
 </body>
 </html>
