@@ -100,7 +100,8 @@
                         echo ' </div>';
                     }
                 } else {
-                    echo "0 results";
+                    header("Location: blog.php"); // redirect to blog.php if no posts are found
+                    // echo "0 results";
                 }
                 $conn->close();
             ?>
