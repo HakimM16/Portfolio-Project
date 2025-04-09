@@ -18,7 +18,7 @@
 <body>
     <!-- add in nav, figure, figcaption, footer, article and header -->
     <header class="header">
-        <a href="#" class="logo">Hakim.</a>
+        <a href="../index.php" class="logo">Hakim.</a>
 
         <?php
             session_start(); // start the session
@@ -26,7 +26,7 @@
             if (isset($_SESSION['logged'])) {
                 echo '
                 <nav class="navbar">
-                    <a href="#" class="active">Home</a>
+                    <a href="../index.php" class="active">Home</a>
                     <a href="about.php">About</a>
                     <a href="portfolio.php">Portfolio</a>
                     <a href="education.php">Education</a>
@@ -42,7 +42,7 @@
             } else {
                 echo '
                 <nav class="navbar">
-                    <a href="#" class="active">Home</a>
+                    <a href="../index.php" class="active">Home</a>
                     <a href="about.php">About</a>
                     <a href="portfolio.php">Portfolio</a>
                     <a href="education.php">Education</a>
@@ -121,7 +121,7 @@
             <div class="portfolio-item fade-in">
                 <h3>Project 3</h3>
                 <p class="project-description">A brief description of the project.</p>
-                <a href="#">View Project</a>
+                <a href="../index.php">View Project</a>
             </div>
             -->
         </div>

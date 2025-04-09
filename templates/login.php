@@ -19,7 +19,7 @@
 <body>
     <!-- add in nav, footer, article, aside and header -->
     <header class="header">
-        <a href="#" class="logo">Hakim.</a>
+        <a href="../index.php" class="logo">Hakim.</a>
         <?php
             session_start(); // start the session
             // check if the user is logged in
@@ -28,7 +28,7 @@
             } else {
                 echo '
                 <nav class="navbar">
-                    <a href="#" class="active">Home</a>
+                    <a href="../index.php" class="active">Home</a>
                     <a href="about.php">About</a>
                     <a href="portfolio.php">Portfolio</a>
                     <a href="education.php">Education</a>
