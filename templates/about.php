@@ -24,17 +24,41 @@
     <header class="header">
         <a href="#" class="logo">Hakim.</a>
 
-        <nav class="navbar">
-            <a href="../index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="experience.html">Experience</a>
-            <a href="login.html">Login</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <?php
+            session_start(); // start the session
+            // check if the user is logged in
+            if (isset($_SESSION['logged'])) {
+                echo '
+                <nav class="navbar">
+                    <a href="#" class="active">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="portfolio.php">Portfolio</a>
+                    <a href="education.php">Education</a>
+                    <a href="skills.php">Skills</a>
+                    <a href="experience.php">Experience</a>
+                    <a href="login.php">Login</a>
+                    <a href="blog.php">Blog</a>
+                    <a href="contact.php">Contact</a>
+                    <a href="logout.php">Logout</a>
+                </nav>
+                
+                ';
+            } else {
+                echo '
+                <nav class="navbar">
+                    <a href="#" class="active">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="portfolio.php">Portfolio</a>
+                    <a href="education.php">Education</a>
+                    <a href="skills.php">Skills</a>
+                    <a href="experience.php">Experience</a>
+                    <a href="login.php">Login</a>
+                    <a href="contact.php">Contact</a>
+                </nav>
+                
+                ';
+            }
+        ?>
     </header>
     <!-- make a description of yourself here -->
     <article class="home">

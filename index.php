@@ -19,18 +19,41 @@
 <body>
     <header class="header">
         <a href="#" class="logo">Hakim.</a>
-
-        <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="templates/about.html">About</a>
-            <a href="templates/portfolio.html">Portfolio</a>
-            <a href="templates/education.html">Education</a>
-            <a href="templates/skills.html">Skills</a>
-            <a href="templates/experience.html">Experience</a>
-            <a href="templates/login.html">Login</a>
-            <a href="templates/blog.html">Blog</a>
-            <a href="templates/contact.html">Contact</a>
-        </nav>
+        <?php
+            session_start(); // start the session
+            // check if the user is logged in
+            if (isset($_SESSION['logged'])) {
+                echo '
+                <nav class="navbar">
+                    <a href="#" class="active">Home</a>
+                    <a href="templates/about.php">About</a>
+                    <a href="templates/portfolio.php">Portfolio</a>
+                    <a href="templates/education.php">Education</a>
+                    <a href="templates/skills.php">Skills</a>
+                    <a href="templates/experience.php">Experience</a>
+                    <a href="templates/login.php">Login</a>
+                    <a href="templates/blog.php">Blog</a>
+                    <a href="templates/contact.php">Contact</a>
+                    <a href="templates/logout.php">Logout</a>
+                </nav>
+                
+                ';
+            } else {
+                echo '
+                <nav class="navbar">
+                    <a href="#" class="active">Home</a>
+                    <a href="templates/about.php">About</a>
+                    <a href="templates/portfolio.php">Portfolio</a>
+                    <a href="templates/education.php">Education</a>
+                    <a href="templates/skills.php">Skills</a>
+                    <a href="templates/experience.php">Experience</a>
+                    <a href="templates/login.php">Login</a>
+                    <a href="templates/contact.php">Contact</a>
+                </nav>
+                
+                ';
+            }
+        ?>
     </header>
     <article class="home">
         <section class="main">
@@ -38,8 +61,8 @@
                 <h1>Hi, I'm Hakim Mabike</h1>
                 <h3>Welcome to my Portfolio</h3>
                 <div class="btn-box"> <!--Uses flex-->
-                    <a href="templates/portfolio.html">My portfolio</a>
-                    <a href="templates/contact.html">Contact me</a>
+                    <a href="templates/portfolio.php">My portfolio</a>
+                    <a href="templates/contact.php">Contact me</a>
                 </div>
             </div>
         </section>

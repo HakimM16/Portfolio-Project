@@ -20,22 +20,33 @@
     <!-- add in nav, footer, article, aside and header -->
     <header class="header">
         <a href="#" class="logo">Hakim.</a>
-        <nav class="navbar">
-            <a href="../index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="experience.html">Experience</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <?php
+            session_start(); // start the session
+            // check if the user is logged in
+            if (isset($_SESSION['logged'])) {
+                header("location: http://localhost/phase2/index.php"); // redirect to index.php
+            } else {
+                echo '
+                <nav class="navbar">
+                    <a href="#" class="active">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="portfolio.php">Portfolio</a>
+                    <a href="education.php">Education</a>
+                    <a href="skills.php">Skills</a>
+                    <a href="experience.php">Experience</a>
+                    <a href="login.php">Login</a>
+                    <a href="contact.php">Contact</a>
+                </nav>
+                
+                ';
+            }
+        ?>
     </header>
     <div class="container">
         <article>
             <aside>
                 <h2 class="text-style">Login</h2>
-                <form action="../php/login.php" method="post">
+                <form action="login1.php" method="post">
                     <label for="username" class="text-style">Email:</label>
                     <input type="email" id="username" name="username" required>
                     <br>
