@@ -22,3 +22,12 @@ hr {
   background-color: #ccc;
   margin: 20px 0;
 }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}

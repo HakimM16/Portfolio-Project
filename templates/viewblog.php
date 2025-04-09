@@ -61,13 +61,48 @@
         <div class="blog-container">
             <!-- blog template -->
             <!-- <div class="blog-post">
-                <h2>Blog Post Title</h2>
+                <div class="top">
+                    <h2>Blog Post Title</h2>
+                    <p><small>Posted on 2023-10-01</small></p>
+                </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <hr>
             </div> -->
             <?php
-                // get data from the 
+                // connect to the database
+                $servername = "127.0.0.1";
+                $username = "root";
+                $password = "";
+                $dbname = "phase2";
+
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // get the data from the database
+                $sql = "SELECT * FROM bloginfo ORDER BY created_at DESC"; // order by date
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo '<div class="blog-post">';
+                        echo ' <div class="top">';
+                        echo ' <h2>'. $row["title"]. '</h2>';
+                        echo ' <p><small>Posted on '. $row["created_at"]. '</small></p>';
+                        echo ' </div>';
+                        echo ' <p>'. $row["info"]. '</p>';
+                        echo '<hr>';
+                        echo ' </div>';
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $conn->close();
             ?>
         </div>
     </div>
