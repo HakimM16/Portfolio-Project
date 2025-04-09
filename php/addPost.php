@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        session_start();
+
+        // check if the user is logged in
+        if (!isset($_SESSION['logged'])) {
+            header("Location: login.php");
+            
+        }
+    ?>
 </body>
 </html>
