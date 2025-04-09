@@ -11,7 +11,7 @@
         session_start();
         // check if the user is already logged in
         if (isset($_SESSION['logged'])) {
-            header("Location: http://localhost/phase2/index.html");
+            header("Location: http://localhost/phase2/index.php"); // redirect to index.php
         
         } else {
             // get data from the form
@@ -40,7 +40,6 @@
                 if ($result->num_rows > 0) {
                     // redirect to addPost.php
                     $_SESSION['logged'] = true;
-
                     header("Location: loggedin.php");
                 } else {
                     echo "Invalid email or password";

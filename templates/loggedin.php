@@ -34,6 +34,13 @@
     </header>
     <div class="container">
         <h2>You have successfully logged in!</h2>
+        <br>
+        <?php
+            // redirected in 3 secs
+            echo '<p>You will be redirected to the <strong>home page</strong> in 3 seconds.</p>';
+            header("refresh:3;url=http://localhost/phase2/index.php"); // redirect to index.php after 3 seconds
+
+        ?>
     </div>
 </body>
 </html>
