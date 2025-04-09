@@ -35,6 +35,7 @@
                     <a href="experience.php">Experience</a>
                     <a href="login.php">Login</a>
                     <a href="blog.php">Blog</a>
+                    <a href="viewblog.php">View Blog</a>
                     <a href="contact.php">Contact</a>
                     <a href="logout.php">Logout</a>
                 </nav>
