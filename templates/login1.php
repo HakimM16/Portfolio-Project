@@ -40,7 +40,8 @@
                 if ($result->num_rows > 0) {
                     // redirect to addPost.php
                     $_SESSION['logged'] = true;
-                    header("Location: blog.php");
+
+                    header("Location: loggedin.php");
                 } else {
                     echo "Invalid email or password";
                 }
