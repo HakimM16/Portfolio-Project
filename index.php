@@ -32,7 +32,7 @@
                     <a href="templates/skills.php">Skills</a>
                     <a href="templates/experience.php">Experience</a>
                     <a href="templates/login.php">Login</a>
-                    <a href="templates/blog.php">Blog</a>
+                    <a href="templates/addentry.php">Add Blog</a>
                     <a href="templates/viewblog.php">View Blog</a>
                     <a href="templates/contact.php">Contact</a>
                     <a href="templates/logout.php">Logout</a>

@@ -35,7 +35,7 @@
                     <a href="skills.php">Skills</a>
                     <a href="experience.php">Experience</a>
                     <a href="login.php">Login</a>
-                    <a href="blog.php">Blog</a>
+                    <a href="addentry.php">Add Blog</a>
                     <a href="viewblog.php">View Blog</a>
                     <a href="contact.php">Contact</a>
                     <a href="logout.php">Logout</a>
@@ -110,7 +110,7 @@
                         echo ' </div>';
                     }
                 } else {
-                    header("Location: blog.php"); // redirect to blog.php if no posts are found
+                    header("Location: addentry.php"); // redirect to blog.php if no posts are found
                     // echo "0 results";
                 }
                 $conn->close();
