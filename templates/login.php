@@ -24,7 +24,7 @@
             session_start(); // start the session
             // check if the user is logged in
             if (isset($_SESSION['logged'])) {
-                header("location: http://localhost/phase2/index.php"); // redirect to index.php
+                header("location: alreadyloggedin.php"); // redirect to index.php
             } else {
                 echo '
                 <nav class="navbar">
@@ -46,7 +46,7 @@
         <article>
             <aside>
                 <h2 class="text-style">Login</h2>
-                <form action="login1.php" method="post">
+                <form action="checklogin.php" method="post">
                     <label for="username" class="text-style">Email:</label>
                     <input type="email" id="username" name="username" required>
                     <br>
