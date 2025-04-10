@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <!-- styling for blog page -->
     <link rel="stylesheet" href="../styles/viewblog.css">
+    <!-- styling for submit button -->
+    <link rel="stylesheet" href="../styles/button_for_viewblog.css">
     <!-- Ubuntu styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,9 +70,14 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <hr>
+                <form action="deletepost.php" method="post">
+                    <button class="delete" type="submit" name="value">
+                        Delete Post
+                    </button>
+                </form>
             </div> -->
             <?php
-                // connect to the database
+                //connect to the database
                 $servername = "127.0.0.1";
                 $username = "root";
                 $password = "";
@@ -97,6 +104,9 @@
                         echo ' </div>';
                         echo ' <p>'. $row["info"]. '</p>';
                         echo '<hr>';
+                        echo ' <form action="deletepost.php" method="post">';
+                        echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
+                        echo ' </form>';
                         echo ' </div>';
                     }
                 } else {

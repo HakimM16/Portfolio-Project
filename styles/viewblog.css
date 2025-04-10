@@ -23,6 +23,7 @@ hr {
   margin: 20px 0;
 }
 
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -31,3 +32,4 @@ hr {
   max-width: 800px;
   margin-bottom: 20px;
 }
+

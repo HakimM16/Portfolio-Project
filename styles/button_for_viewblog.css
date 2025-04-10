@@ -1,0 +1,10 @@
+.delete {
+    background-color: #074d69;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: Ubuntu, cursive;
+  }
