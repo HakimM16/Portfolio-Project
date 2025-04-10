@@ -106,7 +106,7 @@
                         echo '<div class="blog-post">';
                         echo ' <div class="top">';
                         echo ' <h2>'. $row["title"]. '</h2>';
-                        echo ' <p><small>Posted on '. $formatted_date. '</small></p>';
+                        echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
                         echo ' </div>';
                         echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
                         echo '<hr>';
