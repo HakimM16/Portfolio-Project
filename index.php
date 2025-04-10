@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website HTM CSS Only</title>
+    <title>Home</title>
     <link rel="stylesheet" href="styles/home.css">
     <!-- home styling for mobile -->
     <link rel="stylesheet" href="styles/home_for_mobile.css">
