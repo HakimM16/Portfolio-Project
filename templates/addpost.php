@@ -3,8 +3,9 @@
     // get data from the form
     $title = $_POST['title'];
     $content = $_POST['content'];
+    date_default_timezone_set("Europe/London"); // set the timezone to Europe/London
     $date = date("Y-m-d H:i:s"); // get the current date and time
-
+    
     // connect to the database
     $servername = "127.0.0.1";
     $username = "root";

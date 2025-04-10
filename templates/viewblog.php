@@ -100,10 +100,13 @@
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
+                        // changing the format of the date to be more readable
+                        $date = new DateTime($row["created_at"]);
+                        $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
                         echo '<div class="blog-post">';
                         echo ' <div class="top">';
                         echo ' <h2>'. $row["title"]. '</h2>';
-                        echo ' <p><small>Posted on '. $row["created_at"]. '</small></p>';
+                        echo ' <p><small>Posted on '. $formatted_date. '</small></p>';
                         echo ' </div>';
                         echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
                         echo '<hr>';
