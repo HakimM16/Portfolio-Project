@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <!-- styling for blog page -->
     <link rel="stylesheet" href="../styles/viewblog.css">
+    <link rel="stylesheet" href="../styles/preventOverflow.css">
     <!-- styling for submit button -->
     <link rel="stylesheet" href="../styles/button_for_viewblog.css">
     <!-- Ubuntu styling -->
@@ -102,7 +103,7 @@
                         echo ' <h2>'. $row["title"]. '</h2>';
                         echo ' <p><small>Posted on '. $row["created_at"]. '</small></p>';
                         echo ' </div>';
-                        echo ' <p>'. $row["info"]. '</p>';
+                        echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
                         echo '<hr>';
                         echo ' <form action="deletepost.php" method="post">';
                         echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
