@@ -11,6 +11,7 @@
     <!-- styling for blog page -->
     <link rel="stylesheet" href="../styles/viewblog.css">
     <link rel="stylesheet" href="../styles/preventOverflow.css">
+    <link rel="stylesheet" href="../styles/selector.css">
     <!-- blog styling for mobile -->
     <link rel="stylesheet" href="../styles/viewblog_for_mobile.css">
     <!-- styling for submit button -->
@@ -63,6 +64,32 @@
         ?>
     </header>
     <div class="container">
+        <div class="container1">
+            <div class="month">
+                <!-- make a form to select the month -->
+                <form action="viewblog.php" method="post">
+                    <label for="month" class="select_month">Select Month:</label>
+                    <div>
+                        <select name="month" id="month">
+                            <option value="all">All</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <input type="submit" value="Filter" id="filter">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="blog-container">
             <!-- blog template -->
             <!-- <div class="blog-post">
