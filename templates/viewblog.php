@@ -72,18 +72,18 @@
                     <div>
                         <select name="month" id="month">
                             <option value="all">All</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
                         </select>
                         <input type="submit" value="Filter" id="filter">
                     </div>
@@ -107,6 +107,14 @@
                 </form>
             </div> -->
             <?php
+
+                // get value from the form
+                if (isset($_POST['month'])) {
+                    $month = $_POST['month'];
+                } else {
+                    $month = 'all'; // default value
+                }
+
                 //connect to the database
                 $servername = "127.0.0.1";
                 $username = "root";
@@ -121,30 +129,59 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // get the data from the database
-                $sql = "SELECT * FROM bloginfo ORDER BY created_at DESC"; // order by date
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                        // changing the format of the date to be more readable
-                        $date = new DateTime($row["created_at"]);
-                        $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
-                        echo '<div class="blog-post">';
-                        echo ' <div class="top">';
-                        echo ' <h2>'. $row["title"]. '</h2>';
-                        echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
-                        echo ' </div>';
-                        echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
-                        echo '<hr>';
-                        echo ' <form action="deletepost.php" method="post">';
-                        echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
-                        echo ' </form>';
-                        echo ' </div>';
+                // if-statement to check if the month is selected or all
+                if ($month == 'all') {
+                    // get the data from the database
+                    $sql = "SELECT * FROM bloginfo ORDER BY created_at DESC"; // order by date
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            // changing the format of the date to be more readable
+                            $date = new DateTime($row["created_at"]);
+                            $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
+                            echo '<div class="blog-post">';
+                            echo ' <div class="top">';
+                            echo ' <h2>'. $row["title"]. '</h2>';
+                            echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
+                            echo ' </div>';
+                            echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
+                            echo '<hr>';
+                            echo ' <form action="deletepost.php" method="post">';
+                            echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
+                            echo ' </form>';
+                            echo ' </div>';
+                        }
+                    } else {
+                        header("Location: addentry.php"); // redirect to blog.php if no posts are found
+                        // echo "0 results";
                     }
                 } else {
-                    header("Location: addentry.php"); // redirect to blog.php if no posts are found
-                    // echo "0 results";
+                    // get the data from the database
+                    $sql = "SELECT * FROM `bloginfo` WHERE MONTH(created_at) = $month ORDER BY created_at DESC;"; // order by date
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            // changing the format of the date to be more readable
+                            $date = new DateTime($row["created_at"]);
+                            $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
+                            echo '<div class="blog-post">';
+                            echo ' <div class="top">';
+                            echo ' <h2>'. $row["title"]. '</h2>';
+                            echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
+                            echo ' </div>';
+                            echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
+                            echo '<hr>';
+                            echo ' <form action="deletepost.php" method="post">';
+                            echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
+                            echo ' </form>';
+                            echo ' </div>';
+                        }
+                    } else {
+                        //header("Location: addentry.php"); // redirect to blog.php if no posts are found
+                        // echo "0 results";
+                    }
                 }
                 $conn->close();
             ?>
