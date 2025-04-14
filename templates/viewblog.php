@@ -107,7 +107,6 @@
                 </form>
             </div> -->
             <?php
-
                 // get value from the form
                 if (isset($_POST['month'])) {
                     $month = $_POST['month'];
@@ -129,14 +128,27 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
+                $blogPosts = []; // Array to store all blog posts
+
                 // if-statement to check if the month is selected or all
                 if ($month == 'all') {
-                    // get the data from the database
-                    $sql = "SELECT * FROM bloginfo ORDER BY created_at DESC"; // order by date
+                    // get the data from the database - without ORDER BY
+                    $sql = "SELECT * FROM bloginfo";
                     $result = $conn->query($sql);
+                    
                     if ($result->num_rows > 0) {
-                        // output data of each row
+                        // Store all rows in our array
                         while($row = $result->fetch_assoc()) {
+                            $blogPosts[] = $row;
+                        }
+                        
+                        // Sort the array by created_at in descending order
+                        usort($blogPosts, function($a, $b) {
+                            return strtotime($b["created_at"]) - strtotime($a["created_at"]);
+                        });
+                        
+                        // Now display the sorted posts
+                        foreach($blogPosts as $row) {
                             // changing the format of the date to be more readable
                             $date = new DateTime($row["created_at"]);
                             $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
@@ -154,15 +166,25 @@
                         }
                     } else {
                         header("Location: addentry.php"); // redirect to blog.php if no posts are found
-                        // echo "0 results";
                     }
                 } else {
-                    // get the data from the database
-                    $sql = "SELECT * FROM `bloginfo` WHERE MONTH(created_at) = $month ORDER BY created_at DESC;"; // order by date
+                    // get the data from the database - without ORDER BY
+                    $sql = "SELECT * FROM `bloginfo` WHERE MONTH(created_at) = $month";
                     $result = $conn->query($sql);
+                    
                     if ($result->num_rows > 0) {
-                        // output data of each row
+                        // Store all rows in our array
                         while($row = $result->fetch_assoc()) {
+                            $blogPosts[] = $row;
+                        }
+                        
+                        // Sort the array by created_at in descending order
+                        usort($blogPosts, function($a, $b) {
+                            return strtotime($b["created_at"]) - strtotime($a["created_at"]);
+                        });
+                        
+                        // Now display the sorted posts
+                        foreach($blogPosts as $row) {
                             // changing the format of the date to be more readable
                             $date = new DateTime($row["created_at"]);
                             $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
@@ -179,8 +201,7 @@
                             echo ' </div>';
                         }
                     } else {
-                        //header("Location: addentry.php"); // redirect to blog.php if no posts are found
-                        // echo "0 results";
+                        // No posts found for the selected month
                     }
                 }
                 $conn->close();
