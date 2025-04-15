@@ -255,14 +255,15 @@
                                     while($row1 = $result1->fetch_assoc()) {
                                         echo '<div class="comment">';
                                         echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                        echo '<form action="deleteComment.php" method="post">';
+                                        echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
+                                        echo 'Delete Comment';
+                                        echo '</button>';
+                                        echo '</form>';
+                                        echo '</div>';
                                     }
                                 }
-                                echo '<form action="deleteComment.php" method="post">';
-                                echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
-                                echo 'Delete Comment';
-                                echo '</button>';
-                                echo '</form>';
-                                echo '</div>';
+
                                 echo '</div>';
                                 echo '<hr>';
                                 echo ' <form action="deletepost.php" method="post">';
@@ -346,14 +347,15 @@
                                     while($row1 = $result1->fetch_assoc()) {
                                         echo '<div class="comment">';
                                         echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                        echo '<form action="deleteComment.php" method="post">';
+                                        echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
+                                        echo 'Delete Comment';
+                                        echo '</button>';
+                                        echo '</form>';
+                                        echo '</div>';
                                     }
                                 }
-                                echo '<form action="deleteComment.php" method="post">';
-                                echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
-                                echo 'Delete Comment';
-                                echo '</button>';
-                                echo '</form>';
-                                echo '</div>';
+
                                 echo '</div>';
                                 echo '<hr>';
                                 echo ' <form action="deletepost.php" method="post">';
