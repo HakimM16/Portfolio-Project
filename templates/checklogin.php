@@ -65,6 +65,8 @@
                     if ($result->num_rows > 0) {
                         // redirect to addPost.php
                         $_SESSION['logged'] = true;
+                        $_SESSION['username'] = $email; // store the email in the session
+                        $_SESSION['password'] = $password1; // store the password in the session
                         header("Location: loggedin.php");
                     } else {
                         echo "<h2>Invalid username or password</h2>";
