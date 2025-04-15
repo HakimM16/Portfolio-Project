@@ -110,6 +110,9 @@
                         <label for="comment">Add a comment</label>
                         <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
                         <input type="submit" value="Post Comment">
+                        <button class="delete" type="submit" name="value">
+                            Post Comment
+                        </button>
                     </form>
                 </div>
                 <hr>
@@ -216,7 +219,9 @@
                                 echo '<form action="addcomment.php" method="post" id="comment-form">';
                                 echo '<label for="comment">Add a comment</label>';
                                 echo '<textarea id="comment" name="comment" rows="4" cols="50"></textarea>';
-                                echo '<input type="submit" value="Post Comment" id="post-comment">';
+                                echo '<button id="post-comment" type="submit" name="title" value="'. $row["title"] .'">';
+                                echo 'Post Comment';
+                                echo '</button>';
                                 echo '</form>';
                                 echo '</div>';
                                 echo ' </div>';
