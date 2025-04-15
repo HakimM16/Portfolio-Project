@@ -24,7 +24,7 @@
             session_start(); // start the session
             // check if the user is logged in
 
-            if ($_SESSION['username'] == 'hakimmabike@gmail.com') {
+            if (isset($_SESSION['logged']) && $_SESSION['username'] == 'hakimmabike@gmail.com') {
                 echo '<a href="../index.php" class="admin">Admin</a>';
             }
             if (isset($_SESSION['logged'])) {
