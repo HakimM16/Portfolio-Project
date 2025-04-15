@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <!-- styling for blog page -->
     <link rel="stylesheet" href="../styles/viewblog.css">
-    <link rel="stylesheet" href="../styles/viewblog3.css">
+    <link rel="stylesheet" href="../styles/viewblog2.css">
     <link rel="stylesheet" href="../styles/preventOverflow.css">
     <link rel="stylesheet" href="../styles/selector.css">
     <!-- blog styling for mobile -->
