@@ -241,7 +241,6 @@
                                 // get comments from the database based on the title
                                 $sql1 = "SELECT * FROM comments WHERE title = '". $row["title"]. "' ORDER BY created_at DESC";
                                 $result1 = $conn->query($sql1);
-
                                 echo '<div class="blog-post">';
                                 echo ' <div class="top">';
                                 echo ' <h2>'. $row["title"]. '</h2>';
@@ -295,17 +294,74 @@
                             // changing the format of the date to be more readable
                             $date = new DateTime($row["created_at"]);
                             $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
-                            echo '<div class="blog-post">';
-                            echo ' <div class="top">';
-                            echo ' <h2>'. $row["title"]. '</h2>';
-                            echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
-                            echo ' </div>';
-                            echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
-                            echo '<hr>';
-                            echo ' <form action="deletepost.php" method="post">';
-                            echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
-                            echo ' </form>';
-                            echo ' </div>';
+                            // give custom card if email is hakimmabike@gmail.com
+                            if (isset($_SESSION['username']) && $_SESSION['username'] != 'hakimmabike@gmail.com') {
+                                // get comments from the database based on the title
+                                $sql1 = "SELECT * FROM comments WHERE title = '". $row["title"]. "' ORDER BY created_at DESC";
+                                $result1 = $conn->query($sql1);
+
+                                echo '<div class="blog-post">';
+                                echo ' <div class="top">';
+                                echo ' <h2>'. $row["title"]. '</h2>';
+                                echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
+                                echo ' </div>';
+                                echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
+                                echo '<hr>';
+                                echo '<div class="comment-section">';
+                                echo '<h2>Comments</h2>';
+
+                                if ($result1->num_rows > 0) {
+                                    // Store all rows in our array
+                                    while($row1 = $result1->fetch_assoc()) {
+                                        echo '<div class="comment">';
+                                        echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                        echo '</div>';
+                                    }
+                                }
+                                echo '<hr>';
+                                echo '<form action="addcomment.php" method="post" id="comment-form">';
+                                echo '<label for="comment">Add a comment</label>';
+                                echo '<textarea id="comment" name="comment" rows="4" cols="50"></textarea>';
+                                echo '<button id="post-comment" type="submit" name="title" value="'. $row["title"] .'">';
+                                echo 'Post Comment';
+                                echo '</button>';
+                                echo '</form>';
+                                echo '</div>';
+                                echo ' </div>';
+                            } else {
+                                // get comments from the database based on the title
+                                $sql1 = "SELECT * FROM comments WHERE title = '". $row["title"]. "' ORDER BY created_at DESC";
+                                $result1 = $conn->query($sql1);
+                                echo '<div class="blog-post">';
+                                echo ' <div class="top">';
+                                echo ' <h2>'. $row["title"]. '</h2>';
+                                echo ' <p><small>🕛 Posted on '. $formatted_date. '</small></p>';
+                                echo ' </div>';
+                                echo ' <div class="content-wrapper"><p class="info">'. $row["info"]. '</p></div>';
+                                echo '  <hr>';
+                                echo '<div class="comment-section">';
+                                echo '<h2>Comments</h2>';
+                                if ($result1->num_rows > 0) {
+                                    // Store all rows in our array
+                                    while($row1 = $result1->fetch_assoc()) {
+                                        echo '<div class="comment">';
+                                        echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                    }
+                                }
+                                echo '<form action="deleteComment.php" method="post">';
+                                echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
+                                echo 'Delete Comment';
+                                echo '</button>';
+                                echo '</form>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '<hr>';
+                                echo ' <form action="deletepost.php" method="post">';
+                                echo ' <button class="delete" type="submit" name="title" value="'. $row["title"] .'">Delete Post</button>';
+                                echo ' </form>';
+                                echo ' </div>';
+                            }
+
                         }
                     }
                 }
