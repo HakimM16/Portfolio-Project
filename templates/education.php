@@ -8,6 +8,7 @@
     <!-- education styling for mobile -->
     <link rel="stylesheet" href="../styles/education_for_mobile.css">
     <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/admin_logo.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
      <!-- <link rel="stylesheet" href="/styles/reset.css"> -->

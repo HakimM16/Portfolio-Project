@@ -6,6 +6,7 @@
     <title>Contact</title>
     <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
     <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/admin_logo.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <!-- styling for contact -->

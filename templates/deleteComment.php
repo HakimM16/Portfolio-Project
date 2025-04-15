@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logged in</title>
-        <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
-        <link rel="stylesheet" href="../styles/layout.css">
+    <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/admin_logo.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <link rel="stylesheet" href="../styles/blog.css">

@@ -8,6 +8,7 @@
     <!-- home styling for mobile -->
     <link rel="stylesheet" href="styles/home_for_mobile.css">
     <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/admin_logo.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="/styles/layout_for_mobile.css">
     <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
@@ -21,6 +22,9 @@
         <a href="#" class="logo">Hakim.</a>
         <?php
             session_start(); // start the session
+            if ($_SESSION['username'] == 'hakimmabike@gmail.com') {
+                echo '<a href="../index.php" class="admin">Admin</a>';
+            }
             // check if the user is logged in
             if (isset($_SESSION['logged'])) {
                 echo '
