@@ -22,6 +22,9 @@
         <a href="../index.php" class="logo">Hakim.</a>
         <?php
             session_start(); // start the session
+            if ($_SESSION['username'] == 'hakimmabike@gmail.com') {
+                echo '<a href="../index.php" class="admin">Admin</a>';
+            }
             // check if the user is logged in
             if (isset($_SESSION['logged'])) {
                 header("location: alreadyloggedin.php"); // redirect to index.php

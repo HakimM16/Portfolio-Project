@@ -6,6 +6,7 @@
     <title>View Blog</title>
     <!-- <link rel="stylesheet" href="/styles/reset.css"> -->
     <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/admin_logo.css">
     <!-- layout for mobile -->
     <link rel="stylesheet" href="../styles/layout_for_mobile.css">
     <!-- styling for blog page -->
@@ -30,6 +31,10 @@
         <?php
             session_start(); // start the session
             // check if the user is logged in
+
+            if ($_SESSION['username'] == 'hakimmabike@gmail.com') {
+                echo '<a href="../index.php" class="admin">Admin</a>';
+            }
             if (isset($_SESSION['logged'])) {
                 echo '
                 <nav class="navbar">
@@ -92,63 +97,6 @@
             </div>
         </div>
         <div class="blog-container">
-            <!-- blog template for user-->
-            <!-- <div class="blog-post">
-                <div class="top">
-                    <h2>Blog Post Title</h2>
-                    <p><small>Posted on 2023-10-01</small></p>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-                <div class="comment-section">
-                    <h3>Comments</h3>
-                    <div class="comment">
-                        <p><strong>User1:</strong> This is a comment.</p>
-                    </div>
-                    <form action="addcomment.php" method="post">
-                        <label for="comment">Add a comment</label>
-                        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-                        <input type="submit" value="Post Comment">
-                        <button class="delete" type="submit" name="value">
-                            Post Comment
-                        </button>
-                    </form>
-                </div>
-                <hr>
-                <form action="deletepost.php" method="post">
-                    <button class="delete" type="submit" name="value">
-                        Delete Post
-                    </button>
-                </form>
-            </div> -->
-            <!-- blog template for adminstrator-->
-            <!-- <div class="blog-post">
-                <div class="top">
-                    <h2>Blog Post Title</h2>
-                    <p><small>Posted on 2023-10-01</small></p>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <hr>
-                <div class="comment-section">
-                    <h3>Comments</h3>
-                    <div class="comment-for-admin">
-                        <p value="comment"><strong>User1:</strong> This is a comment.</p>
-                        <form action="deleteComment.php" method="post">
-                            <button class="delete" type="submit" name="value" value="comment">
-                                Delete Comment
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <hr>
-                <form action="deletepost.php" method="post">
-                    <button class="delete" type="submit" name="value">
-                        Delete Post
-                    </button>
-                </form>
-            </div> -->
             <?php
 
                 // get value from the form

@@ -35,6 +35,7 @@
 
             session_start();
             // check if the user is already logged in
+            
             if (isset($_SESSION['logged'])) {
                 header("Location: http://localhost/phase2/index.php"); // redirect to index.php
             

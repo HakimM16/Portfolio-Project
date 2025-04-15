@@ -19,19 +19,46 @@
 <body>
     <header class="header">
         <a href="../index.php" class="logo">Hakim.</a>
-        <nav class="navbar">
-            <a href="../index.php" class="active">Home</a>
-            <a href="about.php">About</a>
-            <a href="portfolio.php">Portfolio</a>
-            <a href="education.php">Education</a>
-            <a href="skills.php">Skills</a>
-            <a href="experience.php">Experience</a>
-            <a href="login.php">Login</a>
-            <a href="addentry.php">Add Blog</a>
-            <a href="viewblog.php">View Blog</a>
-            <a href="contact.php">Contact</a>
-            <a href="logout.php">Logout</a>
-        </nav>
+        <?php
+            session_start(); // start the session
+            // check if the user is logged in
+
+            if ($_SESSION['username'] == 'hakimmabike@gmail.com') {
+                echo '<a href="../index.php" class="admin">Admin</a>';
+            }
+            if (isset($_SESSION['logged'])) {
+                echo '
+                <nav class="navbar">
+                    <a href="../index.php" class="active">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="portfolio.php">Portfolio</a>
+                    <a href="education.php">Education</a>
+                    <a href="skills.php">Skills</a>
+                    <a href="experience.php">Experience</a>
+                    <a href="login.php">Login</a>
+                    <a href="addentry.php">Add Blog</a>
+                    <a href="viewblog.php">View Blog</a>
+                    <a href="contact.php">Contact</a>
+                    <a href="logout.php">Logout</a>
+                </nav>
+                
+                ';
+            } else {
+                echo '
+                <nav class="navbar">
+                    <a href="../index.php" class="active">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="portfolio.php">Portfolio</a>
+                    <a href="education.php">Education</a>
+                    <a href="skills.php">Skills</a>
+                    <a href="experience.php">Experience</a>
+                    <a href="login.php">Login</a>
+                    <a href="contact.php">Contact</a>
+                </nav>
+                
+                ';
+            }
+        ?>
     </header>
     <div class="container">
     <?php
