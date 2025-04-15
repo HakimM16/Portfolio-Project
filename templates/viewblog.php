@@ -180,6 +180,8 @@
                     $sql = "SELECT * FROM bloginfo";
                     $result = $conn->query($sql);
 
+                    
+
                     if ($result->num_rows == 0) {
                         echo '<p class="no-posts">No posts available.</p>';
                         
@@ -203,6 +205,10 @@
                             $formatted_date = $date->format('d F Y, H:i') . ' UTC'; 
                             // give custom card if email is hakimmabike@gmail.com
                             if (isset($_SESSION['username']) && $_SESSION['username'] != 'hakimmabike@gmail.com') {
+                                // get comments from the database based on the title
+                                $sql1 = "SELECT * FROM comments WHERE title = '". $row["title"]. "' ORDER BY created_at DESC";
+                                $result1 = $conn->query($sql1);
+
                                 echo '<div class="blog-post">';
                                 echo ' <div class="top">';
                                 echo ' <h2>'. $row["title"]. '</h2>';
@@ -212,9 +218,15 @@
                                 echo '<hr>';
                                 echo '<div class="comment-section">';
                                 echo '<h2>Comments</h2>';
-                                echo '<div class="comment">';
-                                echo '<p value="comment" class="info"><strong>User1:</strong> This is a comment.</p>';
-                                echo '</div>';
+
+                                if ($result1->num_rows > 0) {
+                                    // Store all rows in our array
+                                    while($row1 = $result1->fetch_assoc()) {
+                                        echo '<div class="comment">';
+                                        echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                        echo '</div>';
+                                    }
+                                }
                                 echo '<hr>';
                                 echo '<form action="addcomment.php" method="post" id="comment-form">';
                                 echo '<label for="comment">Add a comment</label>';
@@ -226,6 +238,10 @@
                                 echo '</div>';
                                 echo ' </div>';
                             } else {
+                                // get comments from the database based on the title
+                                $sql1 = "SELECT * FROM comments WHERE title = '". $row["title"]. "' ORDER BY created_at DESC";
+                                $result1 = $conn->query($sql1);
+
                                 echo '<div class="blog-post">';
                                 echo ' <div class="top">';
                                 echo ' <h2>'. $row["title"]. '</h2>';
@@ -235,8 +251,13 @@
                                 echo '  <hr>';
                                 echo '<div class="comment-section">';
                                 echo '<h2>Comments</h2>';
-                                echo '<div class="comment">';
-                                echo '<p value="comment" class="info"><strong>User1:</strong> This is a comment.dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>';
+                                if ($result1->num_rows > 0) {
+                                    // Store all rows in our array
+                                    while($row1 = $result1->fetch_assoc()) {
+                                        echo '<div class="comment">';
+                                        echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
+                                    }
+                                }
                                 echo '<form action="deleteComment.php" method="post">';
                                 echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
                                 echo 'Delete Comment';
