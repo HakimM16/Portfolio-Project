@@ -256,7 +256,7 @@
                                         echo '<div class="comment">';
                                         echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
                                         echo '<form action="deleteComment.php" method="post">';
-                                        echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
+                                        echo '<button class="delete delete-comment" type="submit" name="id" value="'. $row1["id"] .'">';
                                         echo 'Delete Comment';
                                         echo '</button>';
                                         echo '</form>';
@@ -348,7 +348,7 @@
                                         echo '<div class="comment">';
                                         echo '<p value="comment" class="info">&bull; '. $row1["content"] . '</p>';
                                         echo '<form action="deleteComment.php" method="post">';
-                                        echo '<button class="delete delete-comment" type="submit" name="value" value="comment">';
+                                        echo '<button class="delete delete-comment" type="submit" name="id" value="'. $row1["id"] .'">';
                                         echo 'Delete Comment';
                                         echo '</button>';
                                         echo '</form>';
