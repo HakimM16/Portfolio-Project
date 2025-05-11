@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+    .blog-post {
+        min-width: 484px;
+        max-width: 550px;
+    }
+
+    #comment {
+        min-width: 330px;
+        max-width: 446px;
+    }
+    
+}

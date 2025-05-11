@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../styles/preventOverflow.css">
     <link rel="stylesheet" href="../styles/selector.css">
     <!-- blog styling for mobile -->
-    <link rel="stylesheet" href="../styles/viewblog_for_mobile.css">
+    <link rel="stylesheet" href="../styles/viewblog_for_mobile2.css">
     <!-- styling for submit button -->
     <link rel="stylesheet" href="../styles/button_for_viewblog.css">
     <!-- Ubuntu styling -->
