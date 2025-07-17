@@ -9,9 +9,9 @@ The project is fully responsive, ensuring a great user experience across devices
 
 ## Features ✨
 - **Responsive Design** 🎨: Ensures optimal display on various screen sizes (mobile, tablet, desktop).
-- **Dynamic Content** 📢: Utilizes JavaScript to load content dynamically, enhancing user engagement.
+- **Dynamic Content** 📢: Utilises JavaScript to load content dynamically, enhancing user engagement.
 - **Contact Form** 📮: A functional contact form built with HTML and processed using PHP.
-- **Portfolio Gallery** 🌐: An image gallery showcasing projects, enhanced with CSS animations and JavaScript interactivity.
+- **Portfolio Gallery** 🌐: An image gallery showcasing projects and JavaScript interactivity.
 - **PHP Integration** 🛠️: Handles form submissions and other server-side functionalities securely.
 - **Custom Styling** 🎨: Unique and modern design achieved with CSS3.
 
@@ -25,26 +25,41 @@ The project is fully responsive, ensuring a great user experience across devices
 
 ---
 
+## Set up
+1. For correct displaying of PHP files and database:
+   - **XAMPP** for Windows  
+   - **MAMP** for Mac
+
+2. Use one of these to open the portfolio site:
+   - Microsoft Edge  
+   - Chrome  
+   - Firefox  
+   - Safari
+
+---
+
 ## Installation 📦
 Follow these steps to set up the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio-project.git
+   git clone https://github.com/HakimM16/Portfolio-website-for-course.git
    ```
 
-2. Navigate to the project directory:
-   ```bash
-   cd portfolio-project
+2. Download the zip file from the repository
+3. Download size: approx. 40MB
+4. Go to the Downloads folder and extract the file to C:\xampp\htdocs
+5. Open Xampp/MAMP Control Panel and start the Apache and SQL servers
+
+![xampp picture](screenshots/xampp.png)
+
+6. Start a local server. You can use tools like XAMPP, WAMP, or any PHP server of your choice.
+
+7. Place the project files in your server's root directory (e.g., `htdocs` for XAMPP).
+
+9. Open a browser and navigate to:
    ```
-
-3. Start a local server. You can use tools like XAMPP, WAMP, or any PHP server of your choice.
-
-4. Place the project files in your server's root directory (e.g., `htdocs` for XAMPP).
-
-5. Open a browser and navigate to:
-   ```
-   http://localhost/portfolio-project
+   http://localhost/phase2/index.php
    ```
 
 ---
@@ -56,30 +71,22 @@ Follow these steps to set up the project locally:
 
 ---
 
-## Screenshots 🖼️
-Include screenshots of the project here to give users a visual preview. For example:
+## Home Page 🏠
 
-![Homepage Screenshot](screenshots/homepage.png)
-![Portfolio Gallery Screenshot](screenshots/portfolio.png)
-
----
-
-## Future Enhancements 🔧
-- Add a blog section powered by a CMS.
-- Implement a user authentication system.
-- Add an admin panel for managing portfolio items.
+![Homepage Screenshot](screenshots/home.png)
+The homepage has a clean, modern design using a dark blue background and blue accents. At the top, a navigation bar includes links like Home, About, Portfolio, and Contact. The center of the page features a welcome message and two call-to-action buttons: “My portfolio” and “Contact me.” The layout is simple, professional, and easy to navigate.
 
 ---
 
-## Contributing 📚
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
+## About Page 📄
+![About page screenshot](screenshots/about.png)
+This About page showcases me as an aspiring software engineer and Computer Science student at Queen Mary University of London. It highlights his skills in Python, JavaScript, and Java, along with his interests in cloud computing and problem-solving. The page features a profile picture, links to his GitHub and LinkedIn, and a resume download button. Navigation adapts based on user login status using embedded PHP.
 
----
+--- 
 
-## License 📢
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
+## Portfolio Page 🥣
+![Portfolio Page Screenshot](screenshots/portfolio.png)
+The portfolio page features my recent projects displayed in individual cards, including a cost of living comparator, Connect 4 game, crypto tracker, Gemini clone, and finance chatbot. Built with HTML, CSS, JavaScript, React, Flask, and Next.js, the clean and responsive layout uses flexbox for consistent spacing and alignment across devices.
 
 ## Contact 📞
 If you have any questions or suggestions, feel free to reach out:
